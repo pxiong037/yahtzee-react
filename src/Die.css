@@ -1,0 +1,64 @@
+/* Original Styles For Numbers, before icons added in */
+/* .Die {
+  font-size: 25px;
+  display: inline-block;
+  padding: 0.5em 0.8em;
+  font-family: monospace;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  margin-right: 1em;
+} */
+
+/* THE NICER STYLES MADE FOR THE FONT-AWESOME ICONS... */
+
+.Die {
+  color: white;
+  text-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.Die-locked {
+  opacity: 0.5;
+  text-shadow: none;
+}
+
+.Die:not(.Die-locked):hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.Die-rolling {
+  /* animation: spin 1s ease-out; */
+  animation-duration: .7s;
+  animation-name: shake;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.Die-rolling:hover,
+.Die[disabled] {
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+	0% { transform: translate(1px, 1px) rotate(0deg); }
+	10% { transform: translate(-1px, -2px) rotate(-10deg); }
+	20% { transform: translate(-3px, 0px) rotate(10deg); }
+	30% { transform: translate(3px, 2px) rotate(0deg); }
+	40% { transform: translate(1px, -1px) rotate(10deg); }
+	50% { transform: translate(-1px, 2px) rotate(-10deg); }
+	60% { transform: translate(-3px, 1px) rotate(0deg); }
+	70% { transform: translate(3px, 1px) rotate(-10deg); }
+	80% { transform: translate(-1px, -1px) rotate(10deg); }
+	90% { transform: translate(1px, 2px) rotate(0deg); }
+	100% { transform: translate(1px, -2px) rotate(-10deg); }
+}
